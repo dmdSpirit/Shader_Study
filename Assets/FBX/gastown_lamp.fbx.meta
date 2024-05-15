@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 967336474d9c2f74cbd1ab534ee823d1
+guid: 93235664715251349aa322aa0e28180e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: base_color
-    second: {fileID: 2100000, guid: 754857db3f6acf3449415778a9fa7766, type: 2}
+      name: BaseColor
+    second: {fileID: 2100000, guid: 5124ff8d9d09c1543a4c852389b98995, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emission
+    second: {fileID: 2100000, guid: f5f4d20dd450a78429439c774e8a4a05, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
