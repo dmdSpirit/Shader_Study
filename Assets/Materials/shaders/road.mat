@@ -101,19 +101,19 @@ Material:
     - _ZWrite: 1
     - _grain_noise_scale: 106.33
     - _mask: 0
-    - _max_smooth: 0.91
+    - _max_smooth: 0.66
     - _noise_scale: 0.5
     - _noise_scale_1: 1.08
     - _noise_scale_2: 2
     - _offset_strength: 1000
     - _smoothness: 0
-    - _smoothness_1: 0.3
+    - _smoothness_1: 0
     - _smoothness_2: 0
     - _wetness: 1.01
-    - _wetness_1: 1.61
+    - _wetness_1: 1.78
     - _wetness_2: 0.8
     - _wetness_darkening: 1.24
-    - _wetness_darkening_1: 1
+    - _wetness_darkening_1: 0.53
     - _wetness_darkening_2: 1.1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
