@@ -101,6 +101,7 @@ Material:
     - _ZWrite: 1
     - _grain_noise_scale: 106.33
     - _mask: 0
+    - _max_smooth: 0.91
     - _noise_scale: 0.5
     - _noise_scale_1: 1.08
     - _noise_scale_2: 2
