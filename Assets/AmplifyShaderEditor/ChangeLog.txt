@@ -1,3 +1,48 @@
+v1.9.4
+
+   Editor
+      * Template-restricted/specific nodes now show errors with Surface shader (#299)
+      * Fixed nodes sometimes missing attributes (#296)
+      * Fixed swizzle node preview (#292)
+      * Fixed "forwardadd" option added to URP/HDRP with "Instanced Terrain" (#300)
+
+   Templates 
+      * Added Lit/Unlit option for "Enable SSAO" URP 10-17x (#289)
+      * Added Lit/Unlit option for "Receive shadows" URP 10-17x (#233)
+      * Added Lighting Model option (PBR or Simple) to URP Lit 12-17x
+      * Fixed Lit/Unlit missing DOTS support in ExtraPrePass URP 10-17x (#286)
+      * Fixed Unlit missing FoveatedRenderingKeywords.hlsl URP 14-17x (#288)
+      * Fixed Lit LOD Cross Fade pragma in Forward and Gbuffer passes URP 16x
+      * Fixed Lit/Fabric Decal error in 2023.1.0 HDRP 15x (#293)
+      * Fixed Premultiply shader bug in URP Unlit template, all versions (#301)
+      * Fixed terrain instancing in BiRP templates
+      * Fixed foveated rendering related errors on macOS (URP 14) using Forward+ (#238)
+
+   Nodes
+      * Added "Object Bounds" node
+      * Added "Object Position" node
+      * Added "Compute Mip Level" node
+      * Added "Alpha Split" and "Alpha Merge" nodes
+      * Added "Flip" node work in progress
+      * Added "Nand" node
+      * Added "Not" node
+      * Added "Is Infinite"
+      * Added "Is NaN" node
+      * Added "Current Frame" output to "Flipbook UV Animation" node
+      * Added "Max Frame" property to "Flipbook UV Animation" node
+      * Added "Switch" node support for "dynamic_branch" pragma
+      * Renamed "Static Switch" node to "Switch"
+      * Updated "Light Attenuation" node for URP 14.0.9 to 17 (#238)
+      * Fixed "SRP Baked GI" and "Indirect Diffuse Light" nodes in HDRP 17x (#285)
+      * Fixed "If" node code generation to take proper advantage of dynamic branching
+      * Fixed "Billboard" node generating implicit vector casting
+      * Fixed "Dither" node causing crashes on PS5
+      * Fixed "SRP Baked GI" node in Unity 16x 2023.2.20+ (#298)
+      * Fixed "SRP Baked GI" node error in Unity 14x 2022.3.26+ (#297)
+      * Fixed "Flipbook" node to also work with Clamp wrap mode (#304)
+      * Fixed timing issues in "Flipbook UV Animation" node
+      * Fixed "Indirect Diffuse Lighting" generating code in "Meta" pass (#232)
+
 v1.9.3.3
 
    Editor

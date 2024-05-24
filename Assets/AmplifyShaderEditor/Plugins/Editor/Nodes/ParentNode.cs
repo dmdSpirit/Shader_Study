@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -317,6 +318,7 @@ namespace AmplifyShaderEditor
 		protected string m_previousTitle = string.Empty;
 
 		protected string m_previousAdditonalTitle = string.Empty;
+		protected string m_previousAdditonalTitleFormat = string.Empty;
 
 		private bool m_alive = true;
 
@@ -400,7 +402,7 @@ namespace AmplifyShaderEditor
 			m_outputPortsDict = new Dictionary<int, OutputPort>();
 
 			System.Reflection.MemberInfo info = this.GetType();
-			m_nodeAttribs = info.GetCustomAttributes( true )[ 0 ] as NodeAttributes;
+			m_nodeAttribs = info.GetCustomAttributes( true ).FirstOrDefault() as NodeAttributes;
 			if( m_nodeAttribs != null )
 			{
 				m_content.text = m_nodeAttribs.Name;
@@ -3331,6 +3333,17 @@ namespace AmplifyShaderEditor
 			}
 		}
 
+		public void SetAdditonalTitleTextOnCallback( string compareTitle, string compareTitleFormat, Action<ParentNode, string> callback )
+		{
+			if ( !m_previousAdditonalTitle.Equals( compareTitle ) || !m_previousAdditonalTitleFormat.Equals( compareTitleFormat ))
+			{
+				m_previousAdditonalTitle = compareTitle;
+				m_previousAdditonalTitleFormat = compareTitleFormat;
+				m_sizeIsDirty = true;
+				callback( this, compareTitle );
+			}
+		}
+
 		public virtual void SetClippedTitle( string newText, int maxSize = 170, string endString = "..." )
 		{
 			m_content.text = GenerateClippedTitle( newText,maxSize,endString );
@@ -3526,7 +3539,10 @@ namespace AmplifyShaderEditor
 					if( i == 0 )
 					{
 						RenderTexture.active = beforeMask;
-						Graphics.Blit( null, beforeMask, PreviewMaterial, m_previewMaterialPassId );
+						if ( m_previewMaterialPassId < PreviewMaterial.passCount )
+						{
+							Graphics.Blit( null, beforeMask, PreviewMaterial, m_previewMaterialPassId );
+						}
 
 						m_portMask.Set( 0, 0, 0, 0 );
 

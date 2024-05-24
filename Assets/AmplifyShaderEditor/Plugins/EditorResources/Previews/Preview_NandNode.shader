@@ -1,13 +1,13 @@
-Shader "Hidden/SwizzleNode"
+Shader "Hidden/AllNode"
 {
 	Properties
 	{
 		_A ("_A", 2D) = "white" {}
-		_Mask("_Mask", Vector) = (0,0,0,0)
+		_B ("_B", 2D) = "white" {}
 	}
 	SubShader
 	{
-		Pass 
+		Pass
 		{
 			CGPROGRAM
 			#include "UnityCG.cginc"
@@ -15,11 +15,11 @@ Shader "Hidden/SwizzleNode"
 			#pragma fragment frag
 
 			sampler2D _A;
-			int4 _Mask;
+			sampler2D _B;
+
 			float4 frag(v2f_img i) : SV_Target
 			{
-				float4 a = tex2D(_A, i.uv);
-				return float4( a[ _Mask.x ], a[ _Mask.y ], a[ _Mask.z ], a[ _Mask.w ] );
+				return ( !tex2D(_A, i.uv) && !tex2D(_B, i.uv) ) ? ( 1 ).xxxx : ( 0 ).xxxx;
 			}
 			ENDCG
 		}

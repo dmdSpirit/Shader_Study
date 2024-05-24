@@ -1715,11 +1715,6 @@ namespace AmplifyShaderEditor
 				blendDataObj.ValidBlendOp = false;
 		}
 
-		struct SRPConditionalTag
-		{
-
-		}
-
 		public static string ProcessSRPConditionals( string body )
 		{
 			int srpVersion = ASEPackageManagerHelper.PackageSRPVersion;
@@ -1771,13 +1766,13 @@ namespace AmplifyShaderEditor
 			return body;
 		}
 
-		public static string ProcessUnityConditionals( string body )
+		public static int GetUnityVersion()
 		{
 			var versionParts = Application.unityVersion.Split( '.', 'f' );
 			if ( versionParts.Length != 4 || versionParts[ 0 ].Length < 4 )
 			{
 				// @diogo: invalid Unity version format; ignore these conditionals
-				return body;
+				return 0;
 			}
 
 			bool testMajor = int.TryParse( versionParts[ 0 ], out int major );
@@ -1786,10 +1781,19 @@ namespace AmplifyShaderEditor
 			if ( !testMajor || !testMinor || !testPatch )
 			{
 				// @diogo: invalid Unity version format; ignore these conditionals
-				return body;
+				return 0;
 			}
 
-			int unityVersion = major * 10000 + minor * 100 + patch;
+			return major * 10000 + minor * 100 + patch;
+		}
+
+		public static string ProcessUnityConditionals( string body )
+		{
+			int unityVersion = GetUnityVersion();
+			if ( unityVersion <= 0 )
+			{
+				return body;
+			}
 			var processedSignatures = new HashSet<string>();
 			
 			foreach ( Match match in Regex.Matches( body, UnityConditionPattern ) )
