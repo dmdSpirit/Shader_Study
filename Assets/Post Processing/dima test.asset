@@ -44,14 +44,14 @@ MonoBehaviour:
     value: 1
   gradingMode:
     overrideState: 1
-    value: 0
+    value: 1
   externalLut:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   tonemapper:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 2
   toneCurveToeStrength:
     overrideState: 0
     value: 0
@@ -79,28 +79,28 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -5.54
+    value: -5
   tint:
     overrideState: 0
     value: 0
   colorFilter:
     overrideState: 0
-    value: {r: 3.8588235, g: 3.2941177, b: 2.5411766, a: 1}
+    value: {r: 0.91764706, g: 0.9098039, b: 0.8117647, a: 1}
   hueShift:
     overrideState: 0
     value: -11
   saturation:
     overrideState: 1
-    value: -43
+    value: -30
   brightness:
     overrideState: 1
-    value: -21.1
+    value: -30
   postExposure:
     overrideState: 0
-    value: 0
+    value: -0.86
   contrast:
-    overrideState: 1
-    value: 47.27
+    overrideState: 0
+    value: -3
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -115,7 +115,7 @@ MonoBehaviour:
     value: 0
   mixerGreenOutGreenIn:
     overrideState: 0
-    value: 100
+    value: 22
   mixerGreenOutBlueIn:
     overrideState: 0
     value: 0
@@ -1337,7 +1337,7 @@ MonoBehaviour:
       - 0.5
       - 0.5
       - 0.5
---- !u!114 &-1576800420341955250
+--- !u!114 &-1939067067428350451
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1346,34 +1346,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a34fa72bd4185749832024e9c8010bf, type: 3}
-  m_Name: ScreenSpaceReflections
+  m_Script: {fileID: 11500000, guid: 556797029e73b2347956b6579e77e05b, type: 3}
+  m_Name: DepthOfField
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
-  preset:
+  focusDistance:
     overrideState: 1
-    value: 4
-  maximumIterationCount:
-    overrideState: 0
-    value: 16
-  resolution:
-    overrideState: 0
-    value: 0
-  thickness:
-    overrideState: 0
-    value: 8
-  maximumMarchDistance:
-    overrideState: 0
-    value: 100
-  distanceFade:
-    overrideState: 0
-    value: 0.5
-  vignette:
-    overrideState: 0
-    value: 0.5
+    value: 6.71
+  aperture:
+    overrideState: 1
+    value: 3.2
+  focalLength:
+    overrideState: 1
+    value: 51.59
+  kernelSize:
+    overrideState: 1
+    value: 3
 --- !u!114 &-827209141622188030
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1410,60 +1401,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 6170179973343673691}
-  - {fileID: 5486923822805198449}
   - {fileID: -6616002883955452503}
   - {fileID: 7584587931966534795}
   - {fileID: 8111897783991733371}
   - {fileID: -827209141622188030}
   - {fileID: -2059100446877745631}
-  - {fileID: -1576800420341955250}
---- !u!114 &5486923822805198449
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 8.93
-  threshold:
-    overrideState: 1
-    value: 1.25
-  softKnee:
-    overrideState: 1
-    value: 0.584
-  clamp:
-    overrideState: 0
-    value: 65472
-  diffusion:
-    overrideState: 1
-    value: 3.46
-  anamorphicRatio:
-    overrideState: 0
-    value: 0.1
-  color:
-    overrideState: 1
-    value: {r: 0.79607844, g: 0.40392157, b: 0.24705882, a: 1}
-  fastMode:
-    overrideState: 0
-    value: 0
-  dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  dirtIntensity:
-    overrideState: 0
-    value: 0
+  - {fileID: -1939067067428350451}
 --- !u!114 &6170179973343673691
 MonoBehaviour:
   m_ObjectHideFlags: 3
