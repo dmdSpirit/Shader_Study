@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace Water.Water
+namespace Shaders.Water
 {
     public class WaterSimulation : MonoBehaviour
     {

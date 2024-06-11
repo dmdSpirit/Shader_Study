@@ -3,7 +3,7 @@
 using System;
 using UnityEngine;
 
-namespace Raytracing.Raytracing
+namespace Shaders.Raytracing
 {
     [RequireComponent(typeof(MeshRenderer))]
     public sealed class SphereProvider : MonoBehaviour
@@ -45,6 +45,13 @@ namespace Raytracing.Raytracing
             _propertyBlock.SetColor(_albedoID, _color);
             _propertyBlock.SetColor(_specularID, _specular);
             _renderer.SetPropertyBlock(_propertyBlock);
+        }
+
+        public void SetColors(Vector3 albedo, Vector3 specular)
+        {
+            _color = new Color(albedo.x, albedo.y, albedo.z);
+            _specular = new Color(specular.x, specular.y, specular.z);;
+            OnValidate();
         }
 
         public Sphere GetInfo()

@@ -1,11 +1,12 @@
 ﻿#nullable enable
 
+using Shaders.Common;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Raytracing.Raytracing
+namespace Shaders.Raytracing
 {
-    public sealed class RayTracingMaster : MonoBehaviour
+    public sealed class RayTracingMaster : MonoBehaviour, ITriggerable
     {
         private RenderTexture _target = null!;
         private Camera _camera = null!;
@@ -38,6 +39,14 @@ namespace Raytracing.Raytracing
                 && _lightIntensity == _light.intensity
                 && _numberOfBounces == _previousNumberOfBounces)
                 return;
+            ResetSamples();
+        }
+
+        public void Trigger()
+            => ResetSamples();
+        
+        private void ResetSamples()
+        {
             _currentSample = 0;
             transform.hasChanged = false;
             _light.transform.hasChanged = false;

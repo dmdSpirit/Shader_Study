@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace Raytracing.Raytracing
+namespace Shaders.Raytracing
 {
     public readonly struct Sphere
     {

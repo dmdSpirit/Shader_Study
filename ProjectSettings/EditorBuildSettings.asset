@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Road/Bootstrap.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/a.unity
+    path: Assets/Scenes/Road/Additive Scene.unity
     guid: b7432ae89b45fa447b1f7b213342b504
   m_configObjects: {}

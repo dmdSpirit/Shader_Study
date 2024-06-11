@@ -1,6 +1,6 @@
 {
     "name": "Road",
-    "rootNamespace": "Road",
+    "rootNamespace": "Shaders",
     "references": [
         "GUID:151bac090e9a29849b5a49e55b0fdf3b"
     ],

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Raytracing.Raytracing
+namespace Shaders.Raytracing
 {
     public sealed class SceneGeometry : MonoBehaviour
     {

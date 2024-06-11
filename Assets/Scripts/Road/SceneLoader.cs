@@ -1,8 +1,9 @@
 #nullable enable
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Road.Road
+namespace Shaders.Road
 {
     public class SceneLoader : MonoBehaviour
     {
