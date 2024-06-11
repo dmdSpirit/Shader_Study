@@ -3,7 +3,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Shaders
+namespace Raytracing.Raytracing
 {
     public sealed class RayTracingMaster : MonoBehaviour
     {

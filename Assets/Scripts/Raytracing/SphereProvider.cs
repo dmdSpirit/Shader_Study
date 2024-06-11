@@ -3,11 +3,14 @@
 using System;
 using UnityEngine;
 
-namespace Shaders
+namespace Raytracing.Raytracing
 {
     [RequireComponent(typeof(MeshRenderer))]
     public sealed class SphereProvider : MonoBehaviour
     {
+        private readonly static int _albedoID = Shader.PropertyToID("_Color");
+        private readonly static int _specularID = Shader.PropertyToID("_SpecColor");
+
         private MaterialPropertyBlock? _propertyBlock;
         private MeshRenderer? _renderer;
 
@@ -36,17 +39,16 @@ namespace Shaders
 
         private void OnValidate()
         {
-            if (_propertyBlock == null)
-                _propertyBlock = new MaterialPropertyBlock();
+            _propertyBlock ??= new MaterialPropertyBlock();
             if (_renderer == null)
                 _renderer = GetComponent<MeshRenderer>();
-            _propertyBlock.SetColor("_Color", _color);
-            _propertyBlock.SetColor("_SpecColor", _specular);
+            _propertyBlock.SetColor(_albedoID, _color);
+            _propertyBlock.SetColor(_specularID, _specular);
             _renderer.SetPropertyBlock(_propertyBlock);
         }
 
         public Sphere GetInfo()
-            => new(transform.position, _renderer.bounds.extents.magnitude / 2f,
+            => new(transform.position, _renderer!.bounds.extents.magnitude / 2f,
                    new Vector3(_color.r, _color.g, _color.b), new Vector3(_specular.r, _specular.g, _specular.b));
     }
 }

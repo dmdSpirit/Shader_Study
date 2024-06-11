@@ -133,7 +133,7 @@ float3 Shade(inout Ray ray, RayHit hit)
     float theta = acos(ray.direction.y) / -PI;
     float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
     
-                return float3(0.0f,0.0f,0.0f);
+                // return float3(0.0f,0.0f,0.0f);
     return _SkyboxTexture.SampleLevel(sampler_SkyboxTexture, float2(phi, theta), 0);
 }
 

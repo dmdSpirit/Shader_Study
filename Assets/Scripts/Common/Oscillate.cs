@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace Shaders
+namespace Shaders.Common
 {
     public sealed class Oscillate : MonoBehaviour
     {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Shaders
+namespace Raytracing.Raytracing
 {
     public sealed class SceneGeometry : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace Shaders
         private void FindSpheres()
         {
             _spheres.Clear();
-            _spheres.AddRange(FindObjectsOfType<SphereProvider>());
+            _spheres.AddRange(GetComponentsInChildren<SphereProvider>());
             foreach (SphereProvider sphere in _spheres)
                 sphere.OnUpdated += OnSphereUpdated;
 

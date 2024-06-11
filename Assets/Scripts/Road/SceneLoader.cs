@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Shaders
+namespace Road.Road
 {
     public class SceneLoader : MonoBehaviour
     {
